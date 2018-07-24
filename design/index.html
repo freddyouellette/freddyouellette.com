@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<!-- bootstrap -->
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 		<!-- bootstrap css -->
@@ -18,6 +20,32 @@
 				/* background: linear-gradient(to bottom right, #ffe3b2, #a4ffef) */
 				/* background: linear-gradient(to bottom right, #ffa943, #c257ff) */
 				background: linear-gradient(to bottom right, #fff, #ddd)
+			}
+			.audio-player {
+				border-radius:4px;
+				padding:8px 0 8px 0;
+				position:relative;
+				font-size:15px;
+			}
+			.audio-player-play {
+				font-size:22px;
+				cursor:pointer;
+				z-index:10;
+			}
+			.audio-player-progress {
+				position:absolute;
+				bottom:0;
+				border-right:1px solid #bbb;
+				background-color:#222;
+				height:100%;
+				/* border-bottom:5px solid rgb(106, 226, 226); */
+			}
+			.audio-player-progress-click {
+				z-index:5;
+				position:absolute;
+				height:100%;
+				width:100%;
+				top:0;
 			}
 		</style>
 	</head>
@@ -106,12 +134,14 @@
 					Freddy on Bass Trombone -->
 				</div>
 				<div class="col-8">
-					<div class="audio-player row">
+					<div class="audio-player row bg-dark">
 						<audio src="audio/portals/auguries-of-innocence.mp3"></audio>
-						<div class="col-1">
-							<i class="fa fa-play-circle"></i>
+						<div class="audio-player-progress"></div>
+						<i class="fas text-light fa-play-circle audio-player-play ml-3"></i>
+						<div class="text-light col-11 pull-right">
+							Auguries of Innocence
 						</div>
-						Auguries of Innocence
+						<div class="audio-player-progress-click"></div>
 					</div>
 					<!-- <audio controls src="audio/portals/bells-across.mp3">
 						Your browser does not support the <code>audio</code> element.
@@ -207,5 +237,34 @@
 				</div>
 			</div>
 		</div>
+		<script>
+			$(function() {
+				$('.audio-player-play').click(function() {
+					var audio = $(this).siblings('audio')[0];
+					$('audio').each(function() {
+						if(audio != this) {
+							this.pause();
+						}
+					})
+					$('.audio-player-play')
+						.removeClass('fa-pause-circle')
+						.addClass('fa-play-circle');
+					if(audio.paused) {
+						$(this).removeClass('fa-play-circle').addClass('fa-pause-circle');
+						audio.play();
+					} else {
+						audio.pause();
+					}
+				});
+				$('audio').on('timeupdate', function() {
+					var progress = $(this).siblings('.audio-player-progress')[0];
+					$(progress).css('width', this.currentTime / this.duration * 100 + '%')
+				});
+				$('.audio-player-progress-click').click(function(event) {
+					var audio = $(this).siblings('audio')[0];
+					audio.currentTime = event.offsetX / $(this).parent().width() * audio.duration;
+				});
+			});
+		</script>
 	</body>
 </html>
