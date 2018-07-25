@@ -11,10 +11,14 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 		<!-- Google Fonts Raleway -->
 		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-
+		
+		<link href="https://fonts.googleapis.com/css?family=Alice|Bungee|Carme|Carter+One|VT323" rel="stylesheet">
+		
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+		
 		<style>
 			body {
-				font-family: 'Raleway';
+				font-family: 'Montserrat';
 				font-size: 20px;
 				/* background: linear-gradient(to bottom right, #ffe3b2, #af8e72); */
 				/* background: linear-gradient(to bottom right, #ffe3b2, #a4ffef) */
@@ -22,23 +26,33 @@
 				background: linear-gradient(to bottom right, #fff, #ddd)
 			}
 			.audio-player {
-				border-radius:4px;
-				padding:8px 0 8px 0;
+				/* border-radius:4px; */
+				margin:15px 0 15px 0;
 				position:relative;
-				font-size:15px;
+				font-size:18px;
+				background-color:#222
 			}
 			.audio-player-play {
 				font-size:22px;
 				cursor:pointer;
 				z-index:10;
+				margin-right:10px;
 			}
 			.audio-player-progress {
 				position:absolute;
 				bottom:0;
 				border-right:1px solid #bbb;
-				background-color:#222;
+				background-color:rgb(60, 0, 60);
 				height:100%;
 				/* border-bottom:5px solid rgb(106, 226, 226); */
+			}
+			.audio-player-text {
+				z-index:2;
+				font-size:14px;
+				margin-top:7px;
+			}
+			.audio-player-title {
+				color:#aaa;
 			}
 			.audio-player-progress-click {
 				z-index:5;
@@ -46,6 +60,12 @@
 				height:100%;
 				width:100%;
 				top:0;
+			}
+			hr {
+				background-color:#555;
+			}
+			.text-sm {
+				font-size:16px;
 			}
 		</style>
 	</head>
@@ -84,7 +104,7 @@
 		</nav>
 
 		<div class="container">
-			<div class="row">
+			<div class="row py-3" style="font-family:Times; border:2px inset #ccc; background:#eee;">
 				<div class="col-1">
 					<a href="https://www.ram.ac.uk/" target="_blank">
 						<img style="height:120px;" src="images/RAM.jpg" />
@@ -95,7 +115,7 @@
 						<i>Master of Arts in Bass Trombone Performance with Distinction</i>
 					</h5>
 					<a href="https://www.ram.ac.uk/" target="_blank">
-						<b style="font-variant:small-caps;">The Royal Academy of Music</b>
+						<b style="font-variant:small-caps; font-weight:normal; font-size:24px;">The Royal Academy of Music</b>
 						<br/>
 					</a>
 					in London, the United Kingdom
@@ -106,11 +126,11 @@
 					</a>
 				</div>
 				<div class="col-5 pl-5">
-					<h5>
+					<h5 class="mb-4">
 						<i>Bachelor of Arts in Bass Trombone Performance</i>
 					</h5>
 					<a href="https://www.unt.edu/" target="_blank">
-						<b style="font-variant:small-caps;">The University of North Texas</b>
+						<b style="font-variant:small-caps; font-weight:normal; font-size:24px;">The University of North Texas</b>
 						<br/>
 					</a>
 					in Denton, Texas, USA
@@ -126,92 +146,107 @@
 					<br/>
 					<i>Portals</i> (2016)
 					<br/>
-					<!-- <br/>
-					<a class="btn btn-primary" href="https://open.spotify.com/album/0NWfFvngejiVWANsDsSnMQ" target="_blank">Spotify</a>
-					<a class="btn btn-primary" href="https://itunes.apple.com/us/album/portals/1147412825" target="_blank">iTunes</a>
-					<a class="btn btn-primary" href="https://www.amazon.com/gp/product/B01LDGAV5I/ref=dm_ws_sp_ps_dp" target="_blank">Amazon</a><br/>
-					<br/>
-					Freddy on Bass Trombone -->
 				</div>
-				<div class="col-8">
-					<div class="audio-player row bg-dark">
+				<div class="col-8 px-5">
+					<div class="audio-player row">
 						<audio src="audio/portals/auguries-of-innocence.mp3"></audio>
 						<div class="audio-player-progress"></div>
-						<i class="fas text-light fa-play-circle audio-player-play ml-3"></i>
-						<div class="text-light col-11 pull-right">
-							Auguries of Innocence
+						<i class="fas text-light fa-play-circle audio-player-play m-3"></i>
+						<div class="audio-player-text text-light">
+							<div class="audio-player-title">Auguries of Innocence</div>
+							<div class="audio-player-artist">William Pitts</div>
 						</div>
 						<div class="audio-player-progress-click"></div>
 					</div>
-					<!-- <audio controls src="audio/portals/bells-across.mp3">
-						Your browser does not support the <code>audio</code> element.
-					</audio>
-					<audio controls src="audio/portals/jungla.mp3">
-						Your browser does not support the <code>audio</code> element.
-					</audio> -->
+					<div class="audio-player row">
+						<audio src="audio/portals/bells-across.mp3"></audio>
+						<div class="audio-player-progress"></div>
+						<i class="fas text-light fa-play-circle audio-player-play m-3"></i>
+						<div class="audio-player-text text-light">
+							<div class="audio-player-title">Bells Across the Atlantic</div>
+							<div class="audio-player-artist">Adam Gorb</div>
+						</div>
+						<div class="audio-player-progress-click"></div>
+					</div>
+					<div class="audio-player row">
+						<audio src="audio/portals/jungla.mp3"></audio>
+						<div class="audio-player-progress"></div>
+						<i class="fas text-light fa-play-circle audio-player-play m-3"></i>
+						<div class="audio-player-text text-light">
+							<div class="audio-player-title">Jungla</div>
+							<div class="audio-player-artist">Ferrer Ferran</div>
+						</div>
+						<div class="audio-player-progress-click"></div>
+					</div>
+					<div>
+						<br/>
+						<p class="text-sm">
+							This was recorded during my senior year at the University of North Texas. The <a href="https://music.unt.edu/ensembles/north-texas-wind-symphony">UNT Wind Symphony</a> is a famous wind band, internationally known for the recordings they put out - often, they become the de facto standard for other bands. Eugene Corporon, the conductor, is just as famous as being the reason the band reached the top. He is militant but energetic, with a craving for perfection.	
+						</p>
+					</div>
 				</div>
 			</div>
 			<hr/>
 			<div class="row">
-				<div class="col-4">
-					<b>Manuel Cardoso: Non Mortui
-						<br/>
-					</b>
-					<audio controls src="audio/cardoso/girton-non-mortui.mp3">
-						Your browser does not support the
-						<code>audio</code> element.
-					</audio>
-					<br/>
-					<b>De Brito: Sancta Maria
-						<br/>
-					</b>
-					<audio controls src="audio/cardoso/girton-sancta-maria.mp3">
-						Your browser does not support the
-						<code>audio</code> element.
-					</audio>
-					<br/>
-					<b>Filipe de Magalhães: Commissa mea pavesco
-						<br/>
-					</b>
-					<audio controls src="audio/cardoso/girton-commissa-mea.mp3">
-						Your browser does not support the
-						<code>audio</code> element.
-					</audio>
-					<br/>
-				</div>
-				<div class="col-4">
-					<b>The Choir of Girton College and the Historic Brass of the Royal Academy of Music</b>
-					<br/>
-					<i>Cardoso Missa Secundi Toni and Other Works</i> (2018)
-					<br/>
-					<br/>
-					<a class="btn btn-primary" href="https://open.spotify.com/album/0XmtTkq8ZpZaC1lHk0BEhJ" target="_blank">Spotify</a>
-					<a class="btn btn-primary" href="https://itunes.apple.com/us/album/cardoso-others-magnificat-missa-motets/1354077775" target="_blank">iTunes</a>
-					<a class="btn btn-primary" href="https://www.amazon.co.uk/Cardoso-Secundi-Cambridge-Historic-Classics/dp/B079BJV3CN" target="_blank">Amazon</a>
-					<br/>
-					<br/> Freddy on Bass Sackbut
-					<br/>
-				</div>
-				<div class="col-4">
+				<div class="col-4 text-center">
 					<img src="images/cardoso.jpg" alt="The Choir of Girton College and the Historic Brass of the Royal Academy of Music: Cardoso Missa Secundi Toni and Other Works (2018)"
-					class="img-fluid" />
+					class="img-fluid" /><br/>
+					<div class="mt-4">
+						<b>The Choir of Girton College and the Historic Brass of the Royal Academy of Music</b>
+						<br/>
+						<i>Cardoso Missa Secundi Toni and Other Works</i> (2018)
+					</div>
+				</div>
+				<div class="col-8 px-5">
+					<div class="audio-player row">
+						<audio src="audio/cardoso/girton-non-mortui.mp3"></audio>
+						<div class="audio-player-progress"></div>
+						<i class="fas text-light fa-play-circle audio-player-play m-3"></i>
+						<div class="audio-player-text text-light">
+							<div class="audio-player-title">Non Mortui</div>
+							<div class="audio-player-artist">Manuel Cardoso</div>
+						</div>
+						<div class="audio-player-progress-click"></div>
+					</div>
+					<div class="audio-player row">
+						<audio src="audio/cardoso/girton-sancta-maria.mp3"></audio>
+						<div class="audio-player-progress"></div>
+						<i class="fas text-light fa-play-circle audio-player-play m-3"></i>
+						<div class="audio-player-text text-light">
+							<div class="audio-player-title">Sancta Maria</div>
+							<div class="audio-player-artist">De Brito</div>
+						</div>
+						<div class="audio-player-progress-click"></div>
+					</div>
+					<div class="audio-player row">
+						<audio src="audio/cardoso/girton-commissa-mea.mp3"></audio>
+						<div class="audio-player-progress"></div>
+						<i class="fas text-light fa-play-circle audio-player-play m-3"></i>
+						<div class="audio-player-text text-light">
+							<div class="audio-player-title">Commissa mea pavesco</div>
+							<div class="audio-player-artist">Filipe de Magalhães</div>
+						</div>
+						<div class="audio-player-progress-click"></div>
+					</div>
+					<p class="text-sm">
+						<a target="_blank" href="https://www.girton.cam.ac.uk/discover-girton/girton-today/music/choir/">Girton College</a>, found nestled in the countryside on the north-west side of Cambridge, England, is a beautiful fantasy of a college. The choir there is prominent for their regular recordings, directed by a passionate director, Gareth Wilson. I was invited with my sackbut quartet, along with two cornetto players (one being the highly-esteemed <a target="_blank" href="http://www.jeremywest.co.uk/">Jeremy West</a>) to tour with this choir across Portugal, playing the Renaissance music of Manuel Cardoso. We played his music in Lisbon, Estoril, Porto, and the very church that he most likely composed all of this music, Évora Cathedral. We then flew up to the idyllic Durham, England, to record this CD of excellent Renaissance music, played in a classic historic brass sextet fashion - me on bass sackbut, along with three other tenor sackbuts and two cornettos.
+					</p>
 				</div>
 			</div>
 			<hr/>
 			<div class="row">
 				<div class="col-4">
-					<img src="images/two-music.jpg" alt="UNT Two O'Clock Lab Band, Two Music: It Don't Mean a Thing, if it... (2014)" class="img-fluid"
-					/>
+					<img src="images/two-music.jpg" alt="UNT Two O'Clock Lab Band, Two Music: It Don't Mean a Thing, if it... (2014)" class="img-fluid"/>
+					<div class="mt-4 text-center">
+						<b>UNT Two O'Clock Lab Band</b>
+						<br/>
+						<i>Two Music: It Don't Mean a Thing, if it...</i> (2014)
+					</div>
 				</div>
-				<div class="col-4">
-					<b>UNT Two O'Clock Lab Band</b>
-					<br/>
-					<i>Two Music: It Don't Mean a Thing, if it...</i> (2014)
-					<br/>
-					<br/> Freddy on Bass Trombone
-				</div>
-				<div class="col-4">
-
+				<div class="col-8 px-5">
+					<p class="text-sm">
+						UNT is known around the world for their jazz lab bands. They have over a dozen, ranging from the cutting-edge jazz of the <a href="https://en.wikipedia.org/wiki/One_O%27Clock_Lab_Band" target="_blank">One O'Clock Lab Band</a>, to the specialized music of the Latin Jazz Ensemble. The Two O'Clock was usually known for playing more of the classics. It was directed by <a href="https://en.wikipedia.org/wiki/Jay_Saunders" target="_blank">Jay Saunders</a>, who has a history of playing lead trumpet for the greats, including the Stan Kenton Orchestra. There actually was an enormous collection of music donated to UNT by Stan Kenton himself, leading to the reason why they organize their jazz bands in the unusually heavy orchestration of 5 trumpets, 5 trombones, and 5 saxes. I played 4th trombone on this album.
+					</p>
 				</div>
 			</div>
 			<hr/>
