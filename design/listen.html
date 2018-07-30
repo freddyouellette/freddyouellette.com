@@ -64,6 +64,17 @@
 				width:100%;
 				top:0;
 			}
+			.navbar {
+				text-align:center;
+				background-color:#e21d1d;
+				color:white; 
+				font-family:"Raleway";
+				font-size:20px;
+			}
+			.nav-item {
+				margin:0 20px 0 20px;
+				cursor: pointer;
+			}
 			hr {
 				background-color:#555;
 			}
@@ -77,44 +88,28 @@
 	</head>
 
 	<body>
-		<div class="container">
-			<div class="row">
-				<div class="col-12 text-center mt-5">
-					Freddy Ouellette
-				</div>
-				<div class="col-12 text-center mb-5">
-					Bass trombone - Bass Sackbut - Web Development
-				</div>
-			</div>
-		</div>
-		<nav class="navbar navbar-expand-lg mb-5 navbar-dark sticky-top bg-dark">
-			<div class="container">
-				<div class="navbar-collapse">
+			<nav class="navbar navbar-expand-lg navbar-dark navbar-fixed">
+				<a class="navbar-brand" href="#">Freddy Ouellette</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav">
 						<li class="nav-item">
-							<a href="" class="nav-link active">
-								Music
-							</a>
+							<a class="nav-link" href="#">About</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="#">Listen</a>
 						</li>
 						<li class="nav-item">
-							<a href="" class="nav-link">
-								CV
-							</a>
+							<a class="nav-link" href="#">Web Development</a>
 						</li>
 						<li class="nav-item">
-							<a href="" class="nav-link">
-								Contact
-							</a>
-						</li>
-						<li class="nav-item">
-							<a href="" class="nav-link">
-								Web Development
-							</a>
+							<a class="nav-link" href="#">Contact</a>
 						</li>
 					</ul>
 				</div>
-			</div>
-		</nav>
+			</nav>
 		
 		<div class="container">
 			<!-- <div class="row py-3" style="font-family:Times; border:2px inset #ccc; background:#eee;">
