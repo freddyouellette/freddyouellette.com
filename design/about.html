@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link href="https://fonts.googleapis.com/css?family=Cabin|Merriweather|Noto+Serif|Playfair+Display|Questrial|Raleway|Roboto" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="scripts/parallax.js-1.5.0/parallax.min.js"></script>
 		<style>
 			body {
 				margin:0;
@@ -11,16 +13,22 @@
 			}
 			.header {
 				/* background-color:#edf3ff; */
-				padding: 70px 0 70px 0;
+				padding: 350px 0 350px 0;
 				text-align:center;
 				font-family:"Times";
-				background:linear-gradient(to bottom right, #fff, #f4d9d9);
+				color:white; 
+				text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;
+				/* background:linear-gradient(to bottom right, #fff, #f4d9d9); */
 				/* background:linear-gradient(to bottom right, #fff, #eeecff); */
 				/* background:linear-gradient(to bottom right, #fcfbd1, #f4d9d9); */
+				/* background:linear-gradient(to bottom right,rgb(255, 227, 227),rgb(255, 254, 182)); */
 			}
 			.nav {
-				text-align:center;
-				background-color:#e21d1d;
+				text-align:right;
+				background-color:rgba(255,0,0,1);
+				position:fixed;
+				top:0;
+				width:100%;
 				color:white; 
 				padding:15px 0 15px 0;
 				font-family:"Raleway";
@@ -52,9 +60,20 @@
 			}
 			.section {
 				padding:50px 0 50px 0;
+				/* background-size: cover; */
+			}
+			.section-title {
+				color:white; 
+				background-color:rgb(68, 0, 255);
+				/* background-color:rgb(15, 0, 148); */
+				/* background:linear-gradient(to bottom right, rgb(132, 87, 255), rgb(46, 0, 172)); */
+				font-variant:small-caps;
+				/* text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000; */
+				font-size:100px;
 			}
 			.section-blurb {
-				background-color:rgba(0,0,0,0.8);
+				background-color:rgba(0,0,0,0.9);
+				color:white;
 				border-radius:10px;
 				display:inline-block;
 				width:400px;
@@ -66,25 +85,25 @@
 		</style>
 	</head>
 	<body>
-		<div class="header">
+		<div class="nav">
+			<span class="nav-item">Contact</span>
+			<span class="nav-item">Web Development</span>
+			<a href="listen.html" class="nav-item">Listen</a>
+			<span class="nav-item">About</span>
+			<span class="nav-item" style="font-family:Times;font-variant:small-caps;font-size:30px;color:black;">Freddy Ouellette</span>
+		</div>
+		<div class="header" data-parallax="scroll" data-image-src="images/fromage.jpg">
 			<div style="font-size:100px; font-variant:small-caps;">
-				Freddy Ouellette
+				<!-- Freddy Ouellette -->
 				<!-- FREDDY OUELLETTE -->
 			</div>
 			<div style="font-size:20px; font-family:'Raleway'">
-				Bass Trombone - Bass Sackbut - Web Developer
+				<!-- Bass Trombone - Bass Sackbut - Web Developer -->
 			</div>
-			<object id="title-filigree" type="image/svg+xml" data="images/filigree-black.svg"></object>
+			<!-- <object id="title-filigree" type="image/svg+xml" data="images/filigree-black.svg"></object> -->
 		</div>
-		<div class="nav">
-			<span class="nav-item" style="font-family:Times;font-variant:small-caps;font-size:30px;color:black;">Freddy Ouellette</span>
-			<span class="nav-item">About</span>
-			<a href="listen.html" class="nav-item">Listen</a>
-			<span class="nav-item">Contact</span>
-			<span class="nav-item">Web Development</span>
-		</div>
-		<div class="section" style="background-image:url('images/freddy-dark.jpg');color:white;background-size: cover;background-position:center;">
-			<div style="font-size:100px; font-variant:small-caps">Bass Trombonist</div>
+		<div class="section-title">Bass Trombonist</div>
+		<div class="section" data-parallax="scroll" data-image-src="images/Freddy.jpg" data-natural-width="2048">
 			<p class="section-blurb">
 				I've been playing bass trombone for more than 10 years now. I grew up in Pearland, Texas, where football is huge and so are the marching bands. I started playing bass trombone at Pearland High School under the tutoring of Brian Logan.<br/>
 				<br/>
@@ -95,8 +114,8 @@
 				<a href="listen.html">Click here</a> to hear some of the recordings I've made over my career.
 			</p>
 		</div>
-		<div class="section" style="background-image:url('images/ram-historic-brass.jpg');color:white;background-size: cover;background-position:top;">
-			<div style="font-size:100px; font-variant:small-caps;">Bass Sackbut Player</div>
+		<div class="section-title">Bass Sackbut Player</div>
+		<div class="section" data-parallax="scroll" data-image-src="images/ram-historic-brass.jpg" data-natural-width="2048">
 			<p class="section-blurb">
 				The Sackbut was the true predecessor of the trombone.<br/>
 				<br/>
@@ -107,8 +126,8 @@
 				<a href="listen.html">Click here</a> to hear some of the recordings I've made over my career.
 			</p>
 		</div>
-		<div class="section" style="background-image:url('images/thames.jpg');color:white;background-size: cover;background-position:center;">
-			<div style="font-size:100px; font-variant:small-caps;color:black">Web Developer</div>
+		<div class="section-title">Web Developer</div>
+		<div class="section" data-parallax="scroll" data-image-src="images/versailles.jpg" data-natural-width="2048">
 			<p class="section-blurb">
 				Computer Programming has been the unusual hobby of my life, the thing that stuck around long enough for me to actually make money with. I am completely self-taught, never taking a class in my life. I've been programming for about 6 years, since the end of high school. It always interested me because of the constant difficulty and puzzle nature of it. In London, I finally got an opportunity to actually use programming in a professional setting, with the startup company Musitude, which is a music platform. I helped by building a simple NodeJS music transcription software with them.<br/>
 				<br/>
