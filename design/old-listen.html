@@ -4,64 +4,29 @@
 		<!-- jQuery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<!-- bootstrap -->
-		<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script> -->
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 		<!-- bootstrap css -->
-		<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous"> -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
 		<!-- font awesome -->
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 		<!-- Google Fonts Raleway -->
 		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 		
+		<link href="https://fonts.googleapis.com/css?family=Alice|Bungee|Carme|Carter+One|VT323" rel="stylesheet">
+		
 		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 		
 		<style>
-			body {	
-				margin:0;
-				padding:50px 0 0 0;
+			body {
+				font-family: 'Montserrat';
+				font-size: 20px;
+				/* background: linear-gradient(to bottom right, #ffe3b2, #af8e72); */
+				/* background: linear-gradient(to bottom right, #ffe3b2, #a4ffef) */
+				/* background: linear-gradient(to bottom right, #ffa943, #c257ff) */
+				/* background: linear-gradient(to bottom, #ddf, #eed); */
+				background-color:#fff;
 				background-attachment: fixed;
-				font-family:'Raleway';
-			}
-			.container {
-				max-width: 1150px;
-				margin:auto;
-			}
-			.music-feature {
-				margin:50px 0 50px 0;
-			}
-			.album {
-				width:350px;
-				display:inline-block;
-				text-align:center;
-				font-family:'Raleway';
-			}
-			.audio-players {
-				display:inline-block;
-				width:625px;
-				padding:0 50px 0 50px;
-			}
-			.album img {
-				width:100%;
-			}
-			.nav {
-				text-align:right;
-				background-color:rgba(255,0,0,1);
-				position:fixed;
-				top:0;
-				width:100%;
-				color:white; 
-				padding:15px 0 15px 0;
-				font-family:"Raleway";
-				font-size:20px;
-				z-index:25;
-			}
-			.nav-item {
-				margin:0 20px 0 20px;
-				cursor: pointer;
-				color:white;
-				text-decoration:none;
-			}
-			.nav-item:hover {
-				color:black;
+				/* background-color:#fff; */
 			}
 			.audio-player {
 				/* border-radius:4px; */
@@ -73,11 +38,8 @@
 			.audio-player-play {
 				font-size:22px;
 				cursor:pointer;
-				padding:20px;
-				display:inline-block;
 				z-index:10;
 				margin-right:10px;
-				color:white;
 			}
 			.audio-player-progress {
 				position:absolute;
@@ -89,9 +51,8 @@
 			}
 			.audio-player-text {
 				z-index:2;
-				font-size:20px;
+				font-size:14px;
 				margin-top:7px;
-				display:inline-block;
 			}
 			.audio-player-title {
 				color:#aaa;
@@ -127,13 +88,28 @@
 	</head>
 
 	<body>
-		<div class="nav">
-			<span class="nav-item">Contact</span>
-			<span class="nav-item">Web Development</span>
-			<a href="listen.html" class="nav-item">Listen</a>
-			<span class="nav-item">About</span>
-			<span class="nav-item" style="font-family:Times;font-variant:small-caps;font-size:30px;color:black;">Freddy Ouellette</span>
-		</div>
+			<nav class="navbar navbar-expand-lg navbar-dark navbar-fixed">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse justify-content-end text-white" id="navbarNav">
+					<ul class="navbar-nav navbar-right">
+						<li class="nav-item">
+							<a class="nav-link" href="#">Contact</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Web Development</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="listen.html">Listen</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="about.html">About</a>
+						</li>
+					</ul>
+				</div>
+				<a class="navbar-brand" href="#">Freddy Ouellette</a>
+			</nav>
 		
 		<div class="container">
 			<!-- <div class="row py-3" style="font-family:Times; border:2px inset #ccc; background:#eee;">
@@ -170,7 +146,7 @@
 			</div>
 			<hr/> -->
 			<div class="row music-feature">
-				<div class="album text-center">
+				<div class="col-4 text-center">
 					<img src="images/portals.jpg" alt="North Texas Wind Symphony: Portals (2016)" class="img-fluid" />
 					<br/>
 					<br/>
@@ -179,7 +155,7 @@
 					<i>Portals</i> (2016)
 					<br/>
 				</div>
-				<div class="audio-players">
+				<div class="col-8 px-5">
 					<div class="audio-player row">
 						<audio src="audio/portals/auguries-of-innocence.mp3"></audio>
 						<div class="audio-player-progress"></div>
@@ -220,7 +196,7 @@
 			</div>
 			<hr/>
 			<div class="row music-feature">
-				<div class="album text-center">
+				<div class="col-4 text-center">
 					<img src="images/cardoso.jpg" alt="The Choir of Girton College and the Historic Brass of the Royal Academy of Music: Cardoso Missa Secundi Toni and Other Works (2018)"
 					class="img-fluid" /><br/>
 					<div class="mt-4">
@@ -229,7 +205,7 @@
 						<i>Cardoso Missa Secundi Toni and Other Works</i> (2018)
 					</div>
 				</div>
-				<div class="audio-players">
+				<div class="col-8 px-5">
 					<div class="audio-player row">
 						<audio src="audio/cardoso/girton-non-mortui.mp3"></audio>
 						<div class="audio-player-progress"></div>
@@ -267,7 +243,7 @@
 			</div>
 			<hr/>
 			<div class="row music-feature">
-				<div class="album">
+				<div class="col-4">
 					<img src="images/two-music.jpg" alt="UNT Two O'Clock Lab Band, Two Music: It Don't Mean a Thing, if it... (2014)" class="img-fluid"/>
 					<div class="mt-4 text-center">
 						<b>UNT Two O'Clock Lab Band</b>
@@ -275,7 +251,7 @@
 						<i>Two Music: It Don't Mean a Thing, if it...</i> (2014)
 					</div>
 				</div>
-				<div class="audio-players">
+				<div class="col-8 px-5">
 					<div class="audio-player row">
 						<audio src="audio/two-music/2-01 Nardis.m4a"></audio>
 						<div class="audio-player-progress"></div>
@@ -313,13 +289,13 @@
 			</div>
 			<hr/>
 			<div class="row music-feature">
-				<div class="album text-center">
+				<div class="col-4 text-center">
 					<img src="images/pathways.jpg" alt="North Texas Wind Symphony: Pathways (2016)" class="img-fluid" />
 					<b>North Texas Wind Symphony</b>
 					<br/>
 					<i>Pathways</i> (2016)
 				</div>
-				<div class="audio-players">
+				<div class="col-8 px-5">
 					<div class="audio-player row">
 						<audio src="audio/pathways/brooklyn-bridge-1.mp3"></audio>
 						<div class="audio-player-progress"></div>
