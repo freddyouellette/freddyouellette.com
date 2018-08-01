@@ -1,0 +1,96 @@
+// custom Sass variables to mix Bootstrap up a bit
+
+$theme-colors: (
+	"primary": rgb(243, 9, 9),
+	"secondary": black
+);
+
+.nav-link {
+	color:white !important;
+	margin:0 20px 0 20px;
+}
+.nav-link.active {
+	color:#333 !important;
+}
+.nav-link:hover {
+	color:black !important;
+}
+.brandFont {
+	font-family:'Times New Roman', Times, serif;
+	font-variant:small-caps;
+	color:black !important;
+}
+.nav {
+	font-size:20px !important;
+}
+
+body {
+	font-family: 'Raleway', sans-serif !important;
+	font-size: 20px;
+	/* background: linear-gradient(to bottom right, #ffe3b2, #af8e72); */
+	/* background: linear-gradient(to bottom right, #ffe3b2, #a4ffef) */
+	/* background: linear-gradient(to bottom right, #ffa943, #c257ff) */
+	/* background: linear-gradient(to bottom, #ddf, #eed); */
+	background-color:#fff;
+	background-attachment: fixed;
+	/* background-color:#fff; */
+}
+.audio-player {
+	/* border-radius:4px; */
+	margin:15px 0 15px 0;
+	position:relative;
+	font-size:18px;
+	background-color:#222
+}
+.audio-player-play {
+	font-size:22px;
+	cursor:pointer;
+	z-index:10;
+	margin-right:10px;
+}
+.audio-player-progress {
+	position:absolute;
+	bottom:0;
+	border-right:1px solid #bbb;
+	background-color:rgb(60, 0, 60);
+	height:100%;
+	/* border-bottom:5px solid rgb(106, 226, 226); */
+}
+.audio-player-text {
+	z-index:2;
+	display:inline-block;
+	font-size:14px;
+	margin-top:7px;
+}
+.audio-player-title {
+	color:#aaa;
+}
+.audio-player-progress-click {
+	z-index:5;
+	position:absolute;
+	height:100%;
+	width:100%;
+	top:0;
+}
+.navbar {
+	text-align:center;
+	background-color:#e21d1d;
+	color:white; 
+	font-family:"Raleway";
+	font-size:20px;
+}
+hr {
+	background-color:#555;
+}
+.text-sm {
+	font-size:16px;
+}
+.music-feature {
+	margin: 60px 0 60px 0;
+}
+.navbar-brand {
+	font-size:30px !important;
+}
+
+// after setting variables, load bootstrap
+@import "node_modules/bootstrap/scss/bootstrap";
