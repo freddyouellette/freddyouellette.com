@@ -10,7 +10,7 @@ $theme-colors: (
 	margin:0 20px 0 20px;
 }
 .nav-link.active {
-	color:#333 !important;
+	border-bottom:1px solid black;
 }
 .nav-link:hover {
 	color:black !important;
