@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>Freddy Ouellette</title>
 		<script src="node_modules/jquery/dist/jquery.min.js"></script>
 		<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 		<link rel="stylesheet" href="custom.css">
@@ -10,9 +11,12 @@
 		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"/>
 		<!-- <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css"> -->
 		<style>
+			.section {
+				background-position: right;
+				background-size:cover;
+			}
 			.section-title {
 				background-color:black;
-				/* background-color:rgb(68, 0, 255); */
 				color:white; 
 				font-family:'Times New Roman', Times, serif;
 				font-variant:small-caps;
@@ -58,7 +62,7 @@
 			</div>
 			<a class="navbar-brand brandFont ml-4" href="index.html">Freddy Ouellette</a>
 		</nav>
-		<div class="row text-white justify-content-end" style="height:800px;font-size:25px;" data-parallax="scroll" data-position-x="right" data-image-src="images/fromage.jpg">
+		<div class="row section text-white justify-content-end" id="section-header" style="height:800px;font-size:25px;">
 			<div class="col-12 col-md-3 col-lg-2">
 				Bass Trombone
 			</div>
@@ -71,7 +75,7 @@
 		</div>
 		<div class="row col-12 section-title d-none d-md-block">Bass Trombone</div>
 		<div class="section-title section-title-mobile d-md-none">Bass Trombone</div>
-		<div class="row " data-parallax="scroll" data-image-src="images/Freddy.jpg" data-position-x="right" data-natural-width="2048">
+		<div class="row section" id="section-trombone">
 			<p class="section-blurb">
 				I've been playing bass trombone for more than 10 years now. I grew up in Pearland, Texas, where football is huge and so are the marching bands. I started playing bass trombone at Pearland High School under the tutoring of Brian Logan.<br/>
 				<br/>
@@ -84,7 +88,7 @@
 		</div>
 		<div class="row col-12 section-title d-none d-md-block">Bass Sackbut</div>
 		<div class="section-title section-title-mobile d-md-none">Bass Sackbut</div>
-		<div class="section" data-parallax="scroll" data-image-src="images/ram-historic-brass.jpg" data-natural-width="2048">
+		<div class="row section" id="section-sackbut">
 			<p class="section-blurb">
 				The Sackbut was the true predecessor of the trombone.<br/>
 				<br/>
@@ -97,7 +101,7 @@
 		</div>
 		<div class="row col-12 section-title d-none d-md-block">Web Development</div>
 		<div class="section-title section-title-mobile d-md-none">Web Development</div>
-		<div class="section" data-parallax="scroll" data-image-src="images/versailles.jpg" data-natural-width="2048">
+		<div class="row section" id="section-development">
 			<p class="section-blurb">
 				Computer Programming has been the unusual hobby of my life, the thing that stuck around long enough for me to actually make money with. I am completely self-taught, never taking a class in my life. I've been programming for about 6 years, since the end of high school. It always interested me because of the constant difficulty and puzzle nature of it. In London, I finally got an opportunity to actually use programming in a professional setting, with the startup company Musitude, which is a music platform. I helped by building a simple NodeJS music transcription software with them.<br/>
 				<br/>
@@ -107,4 +111,25 @@
 			</p>
 		</div>
 	</body>
+	<script>
+		$(function() {
+			// $('#section-header').parallax({imageSrc:"images/fromage.jpg",naturalWidth:1248,iosFix:true})
+			// $('#section-trombone').parallax({imageSrc:"images/Freddy.jpg",naturalWidth:1248,iosFix:true})
+			// $('#section-sackbut').parallax({imageSrc:"images/ram-historic-brass.jpg",naturalWidth:1248,iosFix:true})
+			// $('#section-development').parallax({imageSrc:"images/versailles.jpg",naturalWidth:1248,iosFix:true})
+			if(!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+				// desktop
+				$('#section-header').parallax({imageSrc:"images/fromage.jpg",naturalWidth:1248})
+				$('#section-trombone').parallax({imageSrc:"images/Freddy.jpg",naturalWidth:1248})
+				$('#section-sackbut').parallax({imageSrc:"images/ram-historic-brass.jpg",naturalWidth:1248})
+				$('#section-development').parallax({imageSrc:"images/versailles.jpg",naturalWidth:1248})
+			} else {
+				// mobile
+				$('#section-header').css('background-image', "url('images/fromage.jpg')");
+				$('#section-trombone').css('background-image', "url('images/Freddy.jpg')");
+				$('#section-sackbut').css('background-image', "url('images/ram-historic-brass.jpg')");
+				$('#section-development').css('background-image', "url('images/versailles.jpg')");
+			}
+		});
+	</script>
 </html>
