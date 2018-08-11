@@ -15,4 +15,4 @@ Website for musician and web developer Freddy Ouellette.
 * It works in French as well as English
 
 ## Contributing
-I encourage all issues to be submitted through the [**Issues** tab on GitHub](https://github.com/freddyouellette/freddyouellette.com/issues). You can see my goals and future feature implemenatations on the same page.
+I encourage all issues to be submitted through the [**Issues** tab on GitHub](https://github.com/freddyouellette/freddyouellette.com/issues). You can see my goals and future feature implementations on the same page.
