@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Freddy Ouellette - Listen</title>
-		<script src="node_modules/jquery/dist/jquery.min.js"></script>
-		<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 		<link rel="stylesheet" href="custom.css">
 		<link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
 		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
@@ -34,23 +33,23 @@
 					<!-- <li class="nav-item">
 						<a class="nav-link" href="web-development.html">Web Development</a>
 					</li> -->
-					<li class="nav-item">
+					<li class="nav-item mr-lg-4">
 						<a class="nav-link" href="contact.html">Contact</a>
 					</li>
 				</ul>
 			</div>
-			<a class="navbar-brand brandFont ml-4" href="index.html">Freddy Ouellette</a>
+			<a class="navbar-brand brandFont" href="index.html">Freddy Ouellette</a>
 		</nav>
 		<div class="container">
 			<div class="row py-3 mt-5" style="font-family:Times;">
 				<div class="col-12 col-md-6 degree-well">
 					<div class="row">
-						<div class="col-3">
+						<div class="col-8 col-sm-6 col-lg-5 m-auto">
 							<a href="https://www.ram.ac.uk/" target="_blank">
-								<img style="height:120px;" src="images/RAM.jpg" />
+								<img class="img-fluid" src="images/RAM.jpg" />
 							</a>
 						</div>
-						<div class="col-9 pl-5">
+						<div class="col-12 pt-3 text-center">
 							<h5>
 								<i>Master of Arts in Bass Trombone Performance with Distinction</i>
 							</h5>
@@ -64,12 +63,12 @@
 				</div>
 				<div class="col-12 col-md-6 degree-well">
 					<div class="row">
-						<div class="col-3">
+						<div class="col-8 col-sm-6 col-lg-5 m-auto">
 							<a href="https://www.unt.edu/" target="_blank">
-								<img style="height:120px;" src="images/UNT.jpg" />
+								<img class="img-fluid" src="images/UNT.jpg" />
 							</a>
 						</div>
-						<div class="col-9 pl-5">
+						<div class="col-12 pt-3 text-center">
 							<h5>
 								<i>Bachelor of Arts in Bass Trombone Performance</i>
 							</h5>
@@ -319,6 +318,8 @@
 				</div>
 			</div> -->
 		</div>
+		<script src="node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 		<script>
 			$(function() {
 				$('.audio-player-play').click(function() {
