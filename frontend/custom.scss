@@ -2,7 +2,9 @@
 
 $theme-colors: (
 	"primary": rgb(243, 9, 9),
-	"secondary": black
+	"secondary":#20c997,
+	"muted": #bbb,
+	"info": #222,
 );
 
 .nav-link {
@@ -27,13 +29,9 @@ $theme-colors: (
 body {
 	font-family: 'Raleway', sans-serif !important;
 	font-size: 20px;
-	/* background: linear-gradient(to bottom right, #ffe3b2, #af8e72); */
-	/* background: linear-gradient(to bottom right, #ffe3b2, #a4ffef) */
-	/* background: linear-gradient(to bottom right, #ffa943, #c257ff) */
-	/* background: linear-gradient(to bottom, #ddf, #eed); */
 	background-color:#fff;
-	background-attachment: fixed;
-	/* background-color:#fff; */
+	position:relative;
+	min-height:100vh;
 }
 .audio-player {
 	/* border-radius:4px; */
