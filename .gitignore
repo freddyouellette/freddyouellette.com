@@ -1,5 +1,5 @@
 resources/
 node_modules/
 *.code-workspace
-*.css.map
+
 old/
