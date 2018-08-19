@@ -4,8 +4,8 @@
   "description": "Musician and Web Developer website of Freddy Ouellette.",
   "main": "index.html",
   "scripts": {
-	"test": "echo \"Error: no test specified\" && exit 1",
-	"build": "sass custom.scss custom.css"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "sass custom.scss custom.css"
   },
   "repository": {
     "type": "git",
