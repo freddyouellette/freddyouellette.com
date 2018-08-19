@@ -378,6 +378,10 @@
 					if(audio.paused) {
 						$(this).removeClass('fa-play-circle').addClass('fa-pause-circle');
 						audio.play();
+						gtag('event', 'play', {
+							event_category: 'audio',
+							event_label: audio.src
+						});
 					} else {
 						audio.pause();
 					}
