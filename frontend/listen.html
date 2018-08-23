@@ -365,19 +365,21 @@
 		<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 		<script>
 			$(function() {
-				$('.audio-player-play').click(function() {
-					var audio = $(this).parent().siblings('audio')[0];
+				var audio_scrubbing = false;
+				function toggleAudio(audio) {
 					$('audio').each(function() {
 						if(audio != this) {
 							this.pause();
 						}
 					})
+					$(audio).attr('played_already', 1);
 					$('.audio-player-play')
 						.removeClass('fa-pause-circle')
 						.addClass('fa-play-circle');
 					if(audio.paused) {
-						$(this).removeClass('fa-play-circle').addClass('fa-pause-circle');
+						$(audio).parent().find('.audio-player-play').removeClass('fa-play-circle').addClass('fa-pause-circle');
 						audio.play();
+						// add google analytics event
 						gtag('event', 'play', {
 							event_category: 'audio',
 							event_label: audio.src
@@ -385,14 +387,55 @@
 					} else {
 						audio.pause();
 					}
+				}
+				$('.audio-player-play').click(function() {
+					toggleAudio($(this).parent().siblings('audio')[0]);
 				});
 				$('audio').on('timeupdate', function() {
-					var progress = $(this).siblings('.audio-player-progress')[0];
-					$(progress).css('width', this.currentTime / this.duration * 100 + '%')
+					if(!audio_scrubbing) {
+						var progress = $(this).siblings('.audio-player-progress')[0];
+						$(progress).css('width', this.currentTime / this.duration * 100 + '%')
+					}
 				});
-				$('.audio-player-progress-click').click(function(event) {
+				$('audio').on('ended', function() {
+					$(this).parent().find('.audio-player-play')
+						.removeClass('fa-pause-circle')
+						.addClass('fa-play-circle');
+				});
+				$('.audio-player-progress-click').on('mousedown', function() {
 					var audio = $(this).siblings('audio')[0];
-					audio.currentTime = event.offsetX / $(this).parent().width() * audio.duration;
+					if(!$(audio).attr('played_already')) {
+						toggleAudio(audio);
+					} else {
+						audio_scrubbing = $(this);
+					}
+				});
+				function calculateScrub(event) {
+					if(audio_scrubbing) {
+						var leftOffset = audio_scrubbing.offset().left;
+						var progress = $(audio_scrubbing.siblings('.audio-player-progress')[0]);
+						if(event.pageX < leftOffset) {
+							// left of the scrubber
+							progress.css('width', 0);
+						} else if (event.pageX > leftOffset + audio_scrubbing.width()) {
+							// right of the scrubber
+							progress.css('width', '100%');
+						} else {
+							// somewhere inbetween the scrubber
+							progress.css('width', event.pageX - leftOffset);
+						}
+					}
+				}
+				$(document).on('mousemove', calculateScrub);
+				$(document).on('mouseup mouseleave', function(event) {
+					if(audio_scrubbing) {
+						calculateScrub(event);
+						// they clicked on an audio scrubber, now they're releasing the click
+						// when the mouse comes up, set the audio offset
+						var audio = audio_scrubbing.siblings('audio')[0];
+						audio.currentTime = event.offsetX / audio_scrubbing.width() * audio.duration;
+						audio_scrubbing = false;
+					}
 				});
 			});
 		</script>
