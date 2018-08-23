@@ -5,11 +5,11 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "sass custom.scss custom.css"
+    "build": "npx sass custom.scss | npx uglifycss > custom.css"
   },
   "repository": {
     "type": "git",
-    "url": "ssh://frederickouellette.com:1993/var/git/freddyouellette.com"
+    "url": "https://github.com/freddyouellette/freddyouellette.com"
   },
   "author": "Frederick Ouellette",
   "license": "ISC",
@@ -18,5 +18,9 @@
     "bootstrap": "^4.1.3",
     "jquery": "^3.3.1",
     "jquery-parallax.js": "^1.5.0"
+  },
+  "devDependencies": {
+    "sass": "^1.13.0",
+    "uglifycss": "0.0.29"
   }
 }
