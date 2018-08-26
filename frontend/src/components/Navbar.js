@@ -11,16 +11,16 @@ class Navbar extends React.Component {
 				<div className="collapse navbar-collapse justify-content-end text-white" id="navbarNav">
 					<ul className="navbar-nav navbar-right">
 						<li className="nav-item">
-							<Link className="nav-link active" to="/about">About</Link>
+							<Link className={`nav-link ${this.props.activeLink == "AboutPage" && 'active'}`} to="/about">About</Link>
 						</li>
 						<li className="nav-item">
-							<Link className="nav-link" to="/listen">Listen</Link>
+							<Link className={`nav-link ${this.props.activeLink == "ListenPage" && 'active'}`} to="/listen">Listen</Link>
 						</li>
 						{/* <li className="nav-item">
-							<Link className="nav-link" to="web-development">Web Development</Link>
+							<Link className={`nav-link ${this.props.activeLink == "WebDevelopmentPage" && 'active'}`} to="web-development">Web Development</Link>
 						</li> */}
 						<li className="nav-item mr-lg-4">
-							<Link className="nav-link" to="/contact">Contact</Link>
+							<Link className={`nav-link ${this.props.activeLink == "ContactPage" && 'active'}`} to="/contact">Contact</Link>
 						</li>
 					</ul>
 				</div>

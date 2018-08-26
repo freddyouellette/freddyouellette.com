@@ -1,11 +1,18 @@
 import React from 'react';
 
-class Navbar extends React.Component {
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
+
+class AboutPage extends React.Component {
 	render() {
 		return (
-			<div>Home</div>
+			<div>
+				<Navbar activeLink="AboutPage"/>
+				Home
+				<Footer />
+			</div>
 		);
 	}
 }
 
-export default Navbar;
+export default AboutPage;

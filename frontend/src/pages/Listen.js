@@ -1,11 +1,18 @@
 import React from 'react';
 
-class Navbar extends React.Component {
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
+
+class ListenPage extends React.Component {
 	render() {
 		return (
-			<div>Listen</div>
+			<div>
+				<Navbar activeLink="ListenPage"/>
+				Listen
+				<Footer />
+			</div>
 		);
 	}
 }
 
-export default Navbar;
+export default ListenPage;
