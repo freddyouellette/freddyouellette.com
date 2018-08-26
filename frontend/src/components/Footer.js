@@ -2,7 +2,7 @@ import React from 'react';
 
 class Navbar extends React.Component {
 	render() {
-		let style = {...(this.props.style || []), ...{"font-size":"12px"}}
+		let style = {...(this.props.style || []), ...{"fontSize":"12px"}}
 		return (
 			<footer className="footer py-4 bg-info" style={style}>
 				<div className="container">
