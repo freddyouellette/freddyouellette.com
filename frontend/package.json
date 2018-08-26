@@ -1,6 +1,11 @@
 {
-  "name": "new-react",
-  "version": "0.1.0",
+  "name": "freddyouellette.com",
+  "version": "3.5.0",
+  "description": "Musician and Web Developer website of Freddy Ouellette.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/freddyouellette/freddyouellette.com"
+  },
   "private": true,
   "dependencies": {
     "autoprefixer": "7.1.6",
