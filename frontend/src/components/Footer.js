@@ -14,7 +14,7 @@ class Navbar extends React.Component {
 							<a className="text-muted" href="mailto:freddy.ouellette@gmail.com">freddy.ouellette@gmail.com</a>
 						</div>
 						<div className="col-12 col-md-4">
-							<a className="text-white" href="https://github.com/freddyouellette/freddyouellette.com/issues" target="_blank">
+							<a className="text-white" href="https://github.com/freddyouellette/freddyouellette.com/issues" rel="noopener noreferrer" target="_blank">
 								See any issues? Submit it on GitHub
 							</a>
 						</div>

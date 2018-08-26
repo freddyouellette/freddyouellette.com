@@ -20,15 +20,15 @@ class ContactPage extends React.Component {
 				<div className="container pt-5">
 					<div className="row justify-content-center">
 						<div className="col-12 col-md-6 col-lg-4 text-center order-12 order-md-1 my-5 my-md-0">
-							<a href={pdfResume} target="_blank">Music Resume</a><br/>
+							<a href={pdfResume} rel="noopener noreferrer" target="_blank">Music Resume</a><br/>
 							<br/>
 							I am available for professional music engagements of all kinds and genres. I also am available to teach private lessons. Please leave me a message and I will get back to you as soon as possible.<br/>
 							<br/>
 							<a href="mailto:freddy.ouellette@gmail.com">freddy.ouellette@gmail.com</a><br/>
-							+1 832 388 2930<br/>
+							<a href="tel:18323882930">+1 832 388 2930</a><br/>
 						</div>
 						<div className="col-12 col-md-6 col-lg-4 order-1 order-md-12">
-							<img className="img-fluid rounded" src={imgFreddyDark}/>
+							<img className="img-fluid rounded" src={imgFreddyDark} alt="In a recording studio"/>
 						</div>
 					</div>
 				</div>

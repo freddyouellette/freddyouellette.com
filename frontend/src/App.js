@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 
-import AboutPage from './pages/About';
-import ListenPage from './pages/Listen';
-import ContactPage from './pages/Contact';
+import AboutPage from './pages/AboutPage';
+import ListenPage from './pages/ListenPage';
+import ContactPage from './pages/ContactPage';
 
 class App extends Component {
 	render() {
