@@ -5,6 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"postinstall": "cd frontend && npm i",
+		"start": "npm --prefix frontend start",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "cd frontend && npm run build"
 	},
