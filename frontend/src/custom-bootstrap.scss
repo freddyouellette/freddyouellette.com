@@ -7,6 +7,9 @@ $theme-colors: (
 	"info": #222222,
 );
 
+// after setting variables, load bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+
 // import Raleway google font
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
@@ -41,7 +44,8 @@ body {
 	margin:15px 0 15px 0;
 	position:relative;
 	font-size:18px;
-	background-color:#222
+	background-color:#222;
+	cursor:pointer;
 }
 .audio-player-play {
 	font-size:22px;
@@ -80,7 +84,7 @@ body {
 }
 .navbar {
 	text-align:center;
-	background-color:#e21d1d;
+	background-color:theme-color('primary');
 	color:white; 
 	font-family:"Raleway";
 	font-size:20px;
@@ -97,6 +101,3 @@ hr {
 .navbar-brand {
 	font-size:25px !important;
 }
-
-// after setting variables, load bootstrap
-@import "../node_modules/bootstrap/scss/bootstrap";
