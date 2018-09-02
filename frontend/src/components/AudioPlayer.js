@@ -7,32 +7,25 @@ class AudioPlayer extends React.Component {
 	
 	constructor(props) {
 		super(props);
+		this.audio = null;
 		this.state = {
 			src: '',
-			audio: null,
+			playedAlready: false,
 			title: '',
 			artist: '',
 			playing: false,
 			scrubbing: false,
-			timePosition: 0,
+			timePercent: 0,
 			buttonClass: 'fa-play-circle',
 		};
-		
-		// bind functions here so I don't have to later
-		this.toggleButton = this.toggleButton.bind(this);
-		this.getAudio = this.getAudio.bind(this);
-		this.updateTimePosition = this.updateTimePosition.bind(this);
 	}
 	
-	getAudio() {
+	getAudio = () => {
 		// load up the audio via the name given to us via props
 		let audioData = AudioStore.audio[this.props.audioName];
 		if(audioData.src !== this.state.src) {
-			let newAudio = new Audio(audioData.src);
-			newAudio.addEventListener('timeupdate', this.updateTimePosition);
-			this.setState({
-				audio: newAudio
-			});
+			this.audio = new Audio(audioData.src);
+			this.audio.addEventListener('timeupdate', this.updateTimePosition);
 		}
 		this.setState({
 			src: audioData.src,
@@ -43,23 +36,87 @@ class AudioPlayer extends React.Component {
 		});
 	}
 	
-	updateTimePosition() {
+	updateTimePosition = () => {
+		if(!this.state.scrubbing) {
+			this.setState({
+				timePercent: this.audio.currentTime / this.audio.duration * 100
+			})
+		}
+	}
+	
+	startScrub = event => {
+		if(!this.state.alreadyPlayed) {
+			// hasn't been played yet, first click will play
+			Dispatcher.dispatch({
+				actionType: 'PLAY_AUDIO',
+				audioName: this.props.audioName
+			});
+			this.setState({
+				alreadyPlayed: true
+			})
+		} else {
+			// allow event properties to be accessed in async functions
+			event.persist();
+			this.setState({
+				width: this.refs.player.offsetWidth,
+				pageX: this.refs.player.getBoundingClientRect().left,
+				scrubbing: true
+			}, () => {this.calculateScrub(event)});
+			window.addEventListener('mousemove', this.calculateScrub);
+			window.addEventListener('mouseup', this.stopScrub);
+		}
+	}
+	
+	calculateScrub = (event) => {
+		let playerWidth = this.state.width,
+			playerLeft = this.state.pageX,
+			playerRight = playerLeft + playerWidth,
+			timePercent;
+		
+		if(event.pageX < playerLeft) {
+			// mouse is left of the player
+			timePercent = 0;
+		} else if(event.pageX < playerRight) {
+			// mouse is somewhere in the middle
+			timePercent = (event.pageX - playerLeft) / playerWidth * 100;
+		} else {
+			// mouse is right of the player
+			timePercent = 100;
+		}
 		this.setState({
-			timePosition: this.state.audio.currentTime / this.state.audio.duration * 100
+			timePercent: timePercent
 		})
+	}
+	
+	stopScrub = event => {
+		this.audio.currentTime = this.state.timePercent / 100 * this.audio.duration
+		this.setState({
+			scrubbing: false
+		});
+		window.removeEventListener('mousemove', this.calculateScrub);
+		window.removeEventListener('mouseup', this.stopScrub);
 	}
 	
 	componentDidUpdate() {
 		// after setState
-		global.globalAudio = this.state.audio;
+		global.globalAudio = this.audio;
 		if(this.state.playing) {
-			this.state.audio.play();
+			this.audio.play();
 		} else {
-			this.state.audio.pause();
+			this.audio.pause();
 		}
 	}
 	
-	toggleButton() {
+	toggleButton = () => {
+		let actionType;
+		if(this.state.playing) {
+			actionType = 'PAUSE_AUDIO';
+		} else {
+			this.setState({
+				alreadyPlayed: true
+			})
+			actionType = 'PLAY_AUDIO';
+		}
 		Dispatcher.dispatch({
 			actionType: this.state.playing ? 'PAUSE_AUDIO' : 'PLAY_AUDIO',
 			audioName: this.props.audioName
@@ -69,7 +126,7 @@ class AudioPlayer extends React.Component {
 	componentDidMount() {
 		// on first loading of this component, start listening for store change
 		AudioStore.on('change', this.getAudio);
-		// and get audio for the first time
+		// and get audio for the first 
 		this.getAudio();
 	}
 
@@ -80,8 +137,8 @@ class AudioPlayer extends React.Component {
 	
 	render() {
 		return (
-			<div className="audio-player row align-items-center">
-				<div className="audio-player-progress" style={{width: this.state.timePosition + '%'}}></div>
+			<div className="audio-player row align-items-center" ref="player">
+				<div className="audio-player-progress" style={{width: this.state.timePercent + '%'}}></div>
 				<div className="col-2">
 					<i className={`fa fa-lg text-light audio-player-play position-relative ${this.state.buttonClass}`}
 						onClick={this.toggleButton}></i>
@@ -90,7 +147,7 @@ class AudioPlayer extends React.Component {
 					<div className="audio-player-title">{this.state.title}</div>
 					<div className="audio-player-artist">{this.state.artist}</div>
 				</div>
-				<div className="audio-player-progress-click"></div>
+				<div className="audio-player-progress-click" onMouseDown={this.startScrub}></div>
 			</div>
 		);
 	}
