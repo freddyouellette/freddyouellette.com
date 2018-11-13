@@ -25,7 +25,7 @@ class AudioStore extends EventEmitter {
 			audCardosoCommissaMea: {
 				'src': audCardosoCommissaMea,
 				'title': "Commissa mea pavesco",
-				'artist': "Filipe de Magalh&atilde",
+				'artist': "Filipe de Magalhães",
 				'playing': false,
 				'scrubbing': false
 			},
