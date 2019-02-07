@@ -4,6 +4,12 @@ Website for musician and web developer Freddy Ouellette.
 * Validates my experience as a web developer
 * Hopefully gets people to contact me about performances, jobs, student teaching, & gigs
 
+## Building the website
+```
+npm i
+npm run build
+```
+
 ## Audience
 * Professional Musicians and Organizers looking to hire me for performances
 * Parents and Band Directors looking for a music lesson teacher
