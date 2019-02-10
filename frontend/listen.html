@@ -585,17 +585,24 @@
 			});
 			
 			$(function() {
+				// filter of music feature sections
 				$('.filterButton').click(function() {
 					$('.filterButton.active').removeClass('active');
 					$(this).addClass('active');
 					var filter = $(this).attr('data-filter');
 					console.log(filter);
 					if(filter) {
-						console.log('.music-feature.' + filter);
-						console.log($('.music-feature.' + filter).length);
 						$('.music-feature.' + filter).slideDown();
-						console.log($('.music-feature.' + filter).not('.' + filter).length);
 						$('.music-feature').not('.' + filter).slideUp();
+						$('.music-feature').not('.' + filter).find('audio').each(function() {
+							if(!this.paused) {
+								this.pause();
+								$(this).closest('.audio-player')
+									.find('.audio-player-play')
+									.removeClass('fa-pause-circle')
+									.addClass('fa-play-circle');
+							}
+						});
 					} else {
 						$('.music-feature').slideDown();
 					}
