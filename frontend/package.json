@@ -5,7 +5,8 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx sass custom.scss | npx uglifycss > custom.css"
+    "build": "npx sass custom.scss | npx uglifycss > custom.css",
+		"build-production": "npx sass custom.scss | npx uglifycss > custom.css"
   },
   "repository": {
     "type": "git",
