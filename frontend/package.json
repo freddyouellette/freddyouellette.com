@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx sass custom.scss | npx uglifycss > custom.css",
-		"build-production": "npx sass custom.scss | npx uglifycss > custom.css"
+    "build-production": "npx sass custom.scss | npx uglifycss > custom.css"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
     "jquery-parallax.js": "^1.5.0"
   },
   "devDependencies": {
-    "sass": "^1.17.3",
+    "sass": "^1.26.8",
     "uglifycss": "0.0.29"
   }
 }
