@@ -15,6 +15,7 @@
 		<title>Freddy Ouellette - Listen</title>
 		<link rel="stylesheet" href="custom.css">
 		<link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+		<link rel="stylesheet" href="node_modules/fraudio/dist/fraudio.min.css">
 		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
@@ -133,42 +134,15 @@
 						<br/>
 					</div>
 					<div class="col-12 col-md-8 px-5">
-						<div class="audio-player row align-items-center">
-							<audio src="audio/portals/auguries-of-innocence.mp3"></audio>
-							<div class="audio-player-progress"></div>
-							<div class="col-2">
-								<i class="fas text-light fa-play-circle audio-player-play position-relative"></i>
-							</div>
-							<div class="audio-player-text text-light col-10">
-								<div class="audio-player-title">Auguries of Innocence</div>
-								<div class="audio-player-artist">William Pitts</div>
-							</div>
-							<div class="audio-player-progress-click"></div>
-						</div>
-						<div class="audio-player row align-items-center">
-							<audio src="audio/portals/bells-across.mp3"></audio>
-							<div class="audio-player-progress"></div>
-							<div class="col-2">
-								<i class="fas text-light fa-play-circle audio-player-play position-relative"></i>
-							</div>
-							<div class="audio-player-text text-light col-10">
-								<div class="audio-player-title">Bells Across the Atlantic</div>
-								<div class="audio-player-artist">Adam Gorb</div>
-							</div>
-							<div class="audio-player-progress-click"></div>
-						</div>
-						<div class="audio-player row align-items-center">
-							<audio src="audio/portals/jungla.mp3"></audio>
-							<div class="audio-player-progress"></div>
-							<div class="col-2">
-								<i class="fas text-light fa-play-circle audio-player-play position-relative"></i>
-							</div>
-							<div class="audio-player-text text-light col-10">
-								<div class="audio-player-title">Jungla</div>
-								<div class="audio-player-artist">Ferrer Ferran</div>
-							</div>
-							<div class="audio-player-progress-click"></div>
-						</div>
+						<audio class="fraudio" src="audio/portals/auguries-of-innocence.mp3"
+							data-title="Auguries of Innocence"
+							data-artist="William Pitts"></audio>
+						<audio class="fraudio" src="audio/portals/bells-across.mp3"
+							data-title="Bells Across the Atlantic"
+							data-artist="Adam Gorb"></audio>
+						<audio class="fraudio" src="audio/portals/jungla.mp3"
+							data-title="Jungla"
+							data-artist="Ferrer Ferran"></audio>
 						<div>
 							<br/>
 							<p class="text-sm">
@@ -191,42 +165,15 @@
 						</div>
 					</div>
 					<div class="col-12 col-md-8 px-5">
-						<div class="audio-player row align-items-center">
-							<audio src="audio/cardoso/girton-non-mortui.mp3"></audio>
-							<div class="audio-player-progress"></div>
-							<div class="col-2">
-								<i class="fas text-light fa-play-circle audio-player-play position-relative"></i>
-							</div>
-							<div class="audio-player-text text-light col-10">
-								<div class="audio-player-title">Non Mortui</div>
-								<div class="audio-player-artist">Manuel Cardoso</div>
-							</div>
-							<div class="audio-player-progress-click"></div>
-						</div>
-						<div class="audio-player row align-items-center">
-							<audio src="audio/cardoso/girton-sancta-maria.mp3"></audio>
-							<div class="audio-player-progress"></div>
-							<div class="col-2">
-								<i class="fas text-light fa-play-circle audio-player-play position-relative"></i>
-							</div>
-							<div class="audio-player-text text-light col-10">
-								<div class="audio-player-title">Sancta Maria</div>
-								<div class="audio-player-artist">De Brito</div>
-							</div>
-							<div class="audio-player-progress-click"></div>
-						</div>
-						<div class="audio-player row align-items-center">
-							<audio src="audio/cardoso/girton-commissa-mea.mp3"></audio>
-							<div class="audio-player-progress"></div>
-							<div class="col-2">
-								<i class="fas text-light fa-play-circle audio-player-play position-relative"></i>
-							</div>
-							<div class="audio-player-text text-light col-10">
-								<div class="audio-player-title">Commissa mea pavesco</div>
-								<div class="audio-player-artist">Filipe de Magalh&atilde;es</div>
-							</div>
-							<div class="audio-player-progress-click"></div>
-						</div>
+						<audio class="fraudio" src="audio/cardoso/girton-non-mortui.mp3"
+							data-title="Non Mortui"
+							data-artist="Manuel Cardoso"></audio>
+						<audio class="fraudio" src="audio/cardoso/girton-sancta-maria.mp3"
+							data-title="Sancta Maria"
+							data-artist="De Brito"></audio>
+						<audio class="fraudio" src="audio/cardoso/girton-commissa-mea.mp3"
+							data-title="Commissa mea pavesco"
+							data-artist="Filipe de Magalh&atilde;es"></audio>
 						<p class="text-sm">
 							<a target="_blank" href="https://www.girton.cam.ac.uk/discover-girton/girton-today/music/choir/">Girton College</a>, found nestled in the countryside on the north-west side of Cambridge, England, is a beautiful fantasy of a college. The choir there is prominent for their regular recordings, directed by a passionate director, Gareth Wilson. I was invited with my sackbut quartet, along with two cornetto players (one being the highly-esteemed <a target="_blank" href="http://www.jeremywest.co.uk/">Jeremy West</a>) to tour with this choir across Portugal, playing the Renaissance music of Manuel Cardoso. We played his music in Lisbon, Estoril, Porto, and the very church that he most likely composed all of this music, &Eacute;vora Cathedral. We then flew up to the idyllic Durham, England, to record this CD of excellent Renaissance music, played in a classic historic brass sextet fashion - me on bass sackbut, along with three other tenor sackbuts and two cornettos.
 						</p>
@@ -245,42 +192,15 @@
 						</div>
 					</div>
 					<div class="col-12 col-md-8 px-5">
-						<div class="audio-player row align-items-center">
-							<audio src="audio/two-music/2-01 Nardis.m4a"></audio>
-							<div class="audio-player-progress"></div>
-							<div class="col-2">
-								<i class="fas text-light fa-play-circle audio-player-play position-relative"></i>
-							</div>
-							<div class="audio-player-text text-light col-10">
-								<div class="audio-player-title">Nardis</div>
-								<div class="audio-player-artist">Miles Davis</div>
-							</div>
-							<div class="audio-player-progress-click"></div>
-						</div>
-						<div class="audio-player row align-items-center">
-							<audio src="audio/two-music/1-05 Vaguely Reminiscient.m4a"></audio>
-							<div class="audio-player-progress"></div>
-							<div class="col-2">
-								<i class="fas text-light fa-play-circle audio-player-play position-relative"></i>
-							</div>
-							<div class="audio-player-text text-light col-10">
-								<div class="audio-player-title">Vaguely Reminiscient</div>
-								<div class="audio-player-artist">Drew Zaremba</div>
-							</div>
-							<div class="audio-player-progress-click"></div>
-						</div>
-						<div class="audio-player row align-items-center">
-							<audio src="audio/two-music/2-09 E-Ticket.m4a"></audio>
-							<div class="audio-player-progress"></div>
-							<div class="col-2">
-								<i class="fas text-light fa-play-circle audio-player-play position-relative"></i>
-							</div>
-							<div class="audio-player-text text-light col-10">
-								<div class="audio-player-title">E-Ticket</div>
-								<div class="audio-player-artist">Chuck Owen</div>
-							</div>
-							<div class="audio-player-progress-click"></div>
-						</div>
+						<audio class="fraudio" src="audio/two-music/2-01 Nardis.m4a"
+							data-title="Nardis"
+							data-artist="Miles Davis"></audio>
+						<audio class="fraudio" src="audio/two-music/1-05 Vaguely Reminiscient.m4a"
+							data-title="Vaguely Reminiscient"
+							data-artist="Drew Zaremba"></audio>
+						<audio class="fraudio" src="audio/two-music/2-09 E-Ticket.m4a"
+							data-title="E-Ticket"
+							data-artist="Chuck Owen"></audio>
 						<p class="text-sm">
 							UNT is known around the world for their jazz lab bands. They have over a dozen, ranging from the cutting-edge jazz of the <a href="https://en.wikipedia.org/wiki/One_O%27Clock_Lab_Band" target="_blank">One O'Clock Lab Band</a>, to the specialized music of the Latin Jazz Ensemble. The Two O'Clock was usually known for playing more of the classics. It was directed by <a href="https://en.wikipedia.org/wiki/Jay_Saunders" target="_blank">Jay Saunders</a>, who has a history of playing lead trumpet for the greats, including the Stan Kenton Orchestra. There actually was an enormous collection of music donated to UNT by Stan Kenton himself, leading to the reason why they organize their jazz bands in the unusually heavy orchestration of 5 trumpets, 5 trombones, and 5 saxes. I played 4th trombone on this album.
 						</p>
@@ -393,66 +313,21 @@
 						<br/>
 					</div>
 					<div class="col-12 col-md-7 px-5">
-						<div class="audio-player row align-items-center">
-							<audio src="audio/q-tips/Debussy 1.mp3"></audio>
-							<div class="audio-player-progress"></div>
-							<div class="col-2">
-								<i class="fas text-light fa-play-circle audio-player-play position-relative"></i>
-							</div>
-							<div class="audio-player-text text-light col-10">
-								<div class="audio-player-title">Trois Chansons, mvt 1: <i>"Dieu! qu'il la fait bon regarder!"</i></div>
-								<div class="audio-player-artist">Claude Debussy, arr. Michael Levin</div>
-							</div>
-							<div class="audio-player-progress-click"></div>
-						</div>
-						<div class="audio-player row align-items-center">
-							<audio src="audio/q-tips/Debussy 2.mp3"></audio>
-							<div class="audio-player-progress"></div>
-							<div class="col-2">
-								<i class="fas text-light fa-play-circle audio-player-play position-relative"></i>
-							</div>
-							<div class="audio-player-text text-light col-10">
-								<div class="audio-player-title">Trois Chansons, mvt 2: <i>"Quant j'ai ouy le tabourin"</i></div>
-								<div class="audio-player-artist">Claude Debussy, arr. Michael Levin</div>
-							</div>
-							<div class="audio-player-progress-click"></div>
-						</div>
-						<div class="audio-player row align-items-center">
-							<audio src="audio/q-tips/Debussy 3.mp3"></audio>
-							<div class="audio-player-progress"></div>
-							<div class="col-2">
-								<i class="fas text-light fa-play-circle audio-player-play position-relative"></i>
-							</div>
-							<div class="audio-player-text text-light col-10">
-								<div class="audio-player-title">Trois Chansons, mvt 3: <i>"Yver, vous n'estes qu'un villain"</i></div>
-								<div class="audio-player-artist">Claude Debussy, arr. Michael Levin</div>
-							</div>
-							<div class="audio-player-progress-click"></div>
-						</div>
-						<div class="audio-player row align-items-center">
-							<audio src="audio/q-tips/Haydn.mp3"></audio>
-							<div class="audio-player-progress"></div>
-							<div class="col-2">
-								<i class="fas text-light fa-play-circle audio-player-play position-relative"></i>
-							</div>
-							<div class="audio-player-text text-light col-10">
-								<div class="audio-player-title">Achieved is the Glorious Work from <i>"The Creation"</i></div>
-								<div class="audio-player-artist">Franz Joseph Haydn, arr. Donald G. Miller</div>
-							</div>
-							<div class="audio-player-progress-click"></div>
-						</div>
-						<div class="audio-player row align-items-center">
-							<audio src="audio/q-tips/Vivaldi.mp3"></audio>
-							<div class="audio-player-progress"></div>
-							<div class="col-2">
-								<i class="fas text-light fa-play-circle audio-player-play position-relative"></i>
-							</div>
-							<div class="audio-player-text text-light col-10">
-								<div class="audio-player-title">Allegro from Concerto in A minor</div>
-								<div class="audio-player-artist">Antonio Vivaldi</div>
-							</div>
-							<div class="audio-player-progress-click"></div>
-						</div>
+						<audio class="fraudio" src="audio/q-tips/Debussy 1.mp3"
+							data-title="Trois Chansons, mvt 1: <i>&quot;Dieu! qu'il la fait bon regarder!&quot;</i>"
+							data-artist="Claude Debussy, arr. Michael Levin"></audio>
+						<audio class="fraudio" src="audio/q-tips/Debussy 2.mp3"
+							data-title="Trois Chansons, mvt 2: <i>&quot;Quant j'ai ouy le tabourin&quot;</i>"
+							data-artist="Claude Debussy, arr. Michael Levin"></audio>
+						<audio class="fraudio" src="audio/q-tips/Debussy 3.mp3"
+							data-title="Trois Chansons, mvt 3: <i>&quot;Yver, vous n'estes qu'un villain&quot;</i>"
+							data-artist="Claude Debussy, arr. Michael Levin"></audio>
+						<audio class="fraudio" src="audio/q-tips/Haydn.mp3"
+							data-title="Achieved is the Glorious Work from <i>&quot;The Creation&quot;</i>"
+							data-artist="Franz Joseph Haydn, arr. Donald G. Miller"></audio>
+						<audio class="fraudio" src="audio/q-tips/Vivaldi.mp3"
+							data-title="Allegro from Concerto in A minor"
+							data-artist="Antonio Vivaldi"></audio>
 						<p class="text-sm">
 							The Q-Tips was a quartet founded during my years at the Royal Academy. We had the opportunity to record a couple of songs in a short professional session, so we picked some of our favorites.<br/><br/>
 							This quartet is the same as the one heard on the Cardoso album above - just on modern trombones instead of sackbuts.
@@ -470,42 +345,15 @@
 						<i>2014 Season</i>
 					</div>
 					<div class="col-12 col-md-8 px-5">
-						<div class="audio-player row align-items-center">
-							<audio src="audio/msfo/tchaikovsky-5-2nd.mp3"></audio>
-							<div class="audio-player-progress"></div>
-							<div class="col-2">
-								<i class="fas text-light fa-play-circle audio-player-play position-relative"></i>
-							</div>
-							<div class="audio-player-text text-light col-10">
-								<div class="audio-player-title">Symphony No. 5 in E Minor, Mvt II</div>
-								<div class="audio-player-artist">Pyotr Ilyich Tchaikovsky</div>
-							</div>
-							<div class="audio-player-progress-click"></div>
-						</div>
-						<div class="audio-player row align-items-center">
-							<audio src="audio/msfo/britten-enigma-variations.mp3"></audio>
-							<div class="audio-player-progress"></div>
-							<div class="col-2">
-								<i class="fas text-light fa-play-circle audio-player-play position-relative"></i>
-							</div>
-							<div class="audio-player-text text-light col-10">
-								<div class="audio-player-title">Enigma Variations - Variation IX "Nimrod"</div>
-								<div class="audio-player-artist">Edward Elgar</div>
-							</div>
-							<div class="audio-player-progress-click"></div>
-						</div>
-						<div class="audio-player row align-items-center">
-							<audio src="audio/msfo/respighi-fontana-di-roma.mp3"></audio>
-							<div class="audio-player-progress"></div>
-							<div class="col-2">
-								<i class="fas text-light fa-play-circle audio-player-play position-relative"></i>
-							</div>
-							<div class="audio-player-text text-light col-10">
-								<div class="audio-player-title">Fontane di Roma</div>
-								<div class="audio-player-artist">Ottorino Respighi</div>
-							</div>
-							<div class="audio-player-progress-click"></div>
-						</div>
+						<audio class="fraudio" src="audio/msfo/tchaikovsky-5-2nd.mp3"
+							data-title="Symphony No. 5 in E Minor, Mvt II"
+							data-artist="Pyotr Ilyich Tchaikovsky"></audio>
+						<audio class="fraudio" src="audio/msfo/britten-enigma-variations.mp3"
+							data-title="Enigma Variations - Variation IX <i>&quot;Nimrod&quot;</i>"
+							data-artist="Edward Elgar"></audio>
+						<audio class="fraudio" src="audio/msfo/respighi-fontana-di-roma.mp3"
+							data-title="Fontane di Roma"
+							data-artist="Ottorino Respighi"></audio>
 					</div>
 				</div>
 				<hr class="mt-5"/>
@@ -519,54 +367,18 @@
 						<i>Pathways</i> (2016)
 					</div>
 					<div class="col-12 col-md-8 px-5">
-						<div class="audio-player row align-items-center">
-							<audio src="audio/pathways/brooklyn-bridge-1.mp3"></audio>
-							<div class="audio-player-progress"></div>
-							<div class="col-2">
-								<i class="fas text-light fa-play-circle audio-player-play position-relative"></i>
-							</div>
-							<div class="audio-player-text text-light col-10">
-								<div class="audio-player-title">Brooklyn Bridge Mvt. 1 (Kimberly Cole Luevano, solo clarinet)</div>
-								<div class="audio-player-artist">Michael Daugherty</div>
-							</div>
-							<div class="audio-player-progress-click"></div>
-						</div>
-						<div class="audio-player row align-items-center">
-							<audio src="audio/pathways/brooklyn-bridge-2.mp3"></audio>
-							<div class="audio-player-progress"></div>
-							<div class="col-2">
-								<i class="fas text-light fa-play-circle audio-player-play position-relative"></i>
-							</div>
-							<div class="audio-player-text text-light col-10">
-								<div class="audio-player-title">Brooklyn Bridge Mvt. 2 (Kimberly Cole Luevano, solo clarinet)</div>
-								<div class="audio-player-artist">Michael Daugherty</div>
-							</div>
-							<div class="audio-player-progress-click"></div>
-						</div>
-						<div class="audio-player row align-items-center">
-							<audio src="audio/pathways/brooklyn-bridge-3.mp3"></audio>
-							<div class="audio-player-progress"></div>
-							<div class="col-2">
-								<i class="fas text-light fa-play-circle audio-player-play position-relative"></i>
-							</div>
-							<div class="audio-player-text text-light col-10">
-								<div class="audio-player-title">Brooklyn Bridge Mvt. 3 (Kimberly Cole Luevano, solo clarinet)</div>
-								<div class="audio-player-artist">Michael Daugherty</div>
-							</div>
-							<div class="audio-player-progress-click"></div>
-						</div>
-						<div class="audio-player row align-items-center">
-							<audio src="audio/pathways/brooklyn-bridge-4.mp3"></audio>
-							<div class="audio-player-progress"></div>
-							<div class="col-2">
-								<i class="fas text-light fa-play-circle audio-player-play position-relative"></i>
-							</div>
-							<div class="audio-player-text text-light col-10">
-								<div class="audio-player-title">Brooklyn Bridge Mvt. 4 (Kimberly Cole Luevano, solo clarinet)</div>
-								<div class="audio-player-artist">Michael Daugherty</div>
-							</div>
-							<div class="audio-player-progress-click"></div>
-						</div>
+						<audio class="fraudio" src="audio/pathways/brooklyn-bridge-1.mp3"
+							data-title="Brooklyn Bridge Mvt. 1 (Kimberly Cole Luevano, solo clarinet)"
+							data-artist="Michael Daugherty"></audio>
+						<audio class="fraudio" src="audio/pathways/brooklyn-bridge-2.mp3"
+							data-title="Brooklyn Bridge Mvt. 2 (Kimberly Cole Luevano, solo clarinet)"
+							data-artist="Michael Daugherty"></audio>
+						<audio class="fraudio" src="audio/pathways/brooklyn-bridge-3.mp3"
+							data-title="Brooklyn Bridge Mvt. 3 (Kimberly Cole Luevano, solo clarinet)"
+							data-artist="Michael Daugherty"></audio>
+						<audio class="fraudio" src="audio/pathways/brooklyn-bridge-4.mp3"
+							data-title="Brooklyn Bridge Mvt. 4 (Kimberly Cole Luevano, solo clarinet)"
+							data-artist="Michael Daugherty"></audio>
 						<p class="text-sm">
 							This CD was recorded at the same time as "Portals" above. 
 						</p>
@@ -594,81 +406,8 @@
 		</footer>
 		<script src="node_modules/jquery/dist/jquery.min.js"></script>
 		<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="node_modules/fraudio/dist/fraudio.min.js"></script>
 		<script>
-			$(function() {
-				var audio_scrubbing = false;
-				function toggleAudio(audio) {
-					$('audio').each(function() {
-						if(audio != this) {
-							this.pause();
-						}
-					})
-					$(audio).attr('played_already', 1);
-					$('.audio-player-play')
-						.removeClass('fa-pause-circle')
-						.addClass('fa-play-circle');
-					if(audio.paused) {
-						$(audio).parent().find('.audio-player-play').removeClass('fa-play-circle').addClass('fa-pause-circle');
-						audio.play();
-						// add google analytics event
-						gtag('event', 'play', {
-							event_category: 'audio',
-							event_label: audio.src
-						});
-					} else {
-						audio.pause();
-					}
-				}
-				$('.audio-player-play').click(function() {
-					toggleAudio($(this).parent().siblings('audio')[0]);
-				});
-				$('audio').on('timeupdate', function() {
-					if(!audio_scrubbing) {
-						var progress = $(this).siblings('.audio-player-progress')[0];
-						$(progress).css('width', this.currentTime / this.duration * 100 + '%')
-					}
-				});
-				$('audio').on('ended', function() {
-					$(this).parent().find('.audio-player-play')
-						.removeClass('fa-pause-circle')
-						.addClass('fa-play-circle');
-				});
-				$('.audio-player-progress-click').on('mousedown', function() {
-					var audio = $(this).siblings('audio')[0];
-					if(!$(audio).attr('played_already')) {
-						toggleAudio(audio);
-					} else {
-						audio_scrubbing = $(this);
-					}
-				});
-				function calculateScrub(event) {
-					if(audio_scrubbing) {
-						var leftOffset = audio_scrubbing.offset().left;
-						var progress = $(audio_scrubbing.siblings('.audio-player-progress')[0]);
-						if(event.pageX < leftOffset) {
-							// left of the scrubber
-							progress.css('width', 0);
-						} else if (event.pageX > leftOffset + audio_scrubbing.width()) {
-							// right of the scrubber
-							progress.css('width', '100%');
-						} else {
-							// somewhere inbetween the scrubber
-							progress.css('width', event.pageX - leftOffset);
-						}
-					}
-				}
-				$(document).on('mousemove', calculateScrub);
-				$(document).on('mouseup mouseleave', function(event) {
-					if(audio_scrubbing) {
-						calculateScrub(event);
-						// they clicked on an audio scrubber, now they're releasing the click
-						// when the mouse comes up, set the audio offset
-						var audio = audio_scrubbing.siblings('audio')[0];
-						audio.currentTime = event.offsetX / audio_scrubbing.width() * audio.duration;
-						audio_scrubbing = false;
-					}
-				});
-			});
 			
 			$(function() {
 				// filter of music feature sections
